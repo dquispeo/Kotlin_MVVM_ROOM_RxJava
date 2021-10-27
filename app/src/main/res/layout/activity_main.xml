@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="scheduleViewModel"
+            type="com.dquispeo.technicaltestapp.viewmodel.ScheduleViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
+
+        <RelativeLayout
+            android:id="@+id/a_sch_rll_1"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/purple_500">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="70dp"
+                android:gravity="center"
+                android:text="Agenda"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/a_sch_imb_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="16dp"
+                android:background="@color/purple_500"
+                android:src="@drawable/ic_visibility"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/a_sch_imb_no_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="16dp"
+                android:background="@color/purple_500"
+                android:src="@drawable/ic_visibility_off"
+                android:visibility="gone"
+                app:tint="@color/white" />
+        </RelativeLayout>
+        <!-- Note: A RecyclerView can also be used -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/a_sch_rcl_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/a_sch_rll_1" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/a_sch_flt_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:contentDescription="TODO"
+            android:src="@android:drawable/ic_input_add" />
+    </RelativeLayout>
+</layout>
